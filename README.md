@@ -1,6 +1,6 @@
 # What I Changed
 
-Added a new custom - renameFile
+Added a new custom file - renameFile
 Contains two methods:
 
 # getDeviceName
@@ -11,13 +11,9 @@ finds and returns the device name (i.e. "b1", "r3", etc)
 takes three parameters - file, device name, file type
 renames file to device name
 
-MUST HAVE THIS FILE IN THE SAME FOLDER AS RStoCSV IN ORDER FOR AUTOMATIC CONVERSION TO WORK
+#MUST HAVE THIS FILE IN THE SAME FOLDER AS RStoCSV IN ORDER FOR AUTOMATIC CONVERSION TO WORK
 
-
-
-
-
-
+begin normal RStoCSV readme :D
 
 # RStoCSV
 
