@@ -1,3 +1,24 @@
+#What I Changed
+
+Added a new custom - renameFile
+Contains two methods:
+
+#getDeviceName
+takes one parameter - file
+finds and returns the device name (i.e. "b1", "r3", etc)
+
+#renameFile
+takes three parameters - file, device name, file type
+renames file to device name
+
+MUST HAVE THIS FILE IN THE SAME FOLDER AS RStoCSV IN ORDER FOR AUTOMATIC CONVERSION TO WORK
+
+
+
+
+
+
+
 # RStoCSV
 
 Easy to use program that converts JSON data exports from [Robot Scouter](https://github.com/SUPERCILEX/Robot-Scouter) to CSV for easy analysis in programs like Tableau and Excel!
