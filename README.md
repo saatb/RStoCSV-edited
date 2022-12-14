@@ -1,18 +1,27 @@
 # What I Changed
 
 Added a new custom file - renameFile
+
 Contains two methods:
 
-# getDeviceName
+getDeviceName
 takes one parameter - file
+
 finds and returns the device name (i.e. "b1", "r3", etc)
 
-# renameFile
+renameFile
 takes three parameters - file, device name, file type
+
 renames file to device name
 
-#MUST HAVE THIS FILE IN THE SAME FOLDER AS RStoCSV IN ORDER FOR AUTOMATIC CONVERSION TO WORK
+# MUST HAVE THIS FILE IN THE SAME FOLDER AS RStoCSV IN ORDER FOR AUTOMATIC CONVERSION TO WORK
 
+I added some stuff to the convert.py program that won't work unless my renameFile file is in the same folder
+
+Running convert.py should automatically rename both the .json and the .csv file
+
+
+______________________________
 begin normal RStoCSV readme :D
 
 # RStoCSV
