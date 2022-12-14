@@ -3,7 +3,8 @@ import json
 import os
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
-import renameFile
+from renameFile import renameFile
+from renameFile import getDeviceName
 
 import numpy as np
 import pandas as pd
@@ -129,7 +130,7 @@ print("Successfully created {}.csv in {}".format(os.path.basename(file_path).spl
 index1 = file_path.index(".json")
 CSV_file_path = file_path[0:index1] + ".csv"
 
-deviceName = renameFile.getDeviceName(CSV_file_path)
+deviceName = getDeviceName(CSV_file_path)
 
-renameFile.renameFile(deviceName, file_path, ".json")
-renameFile.renameFile(deviceName, CSV_file_path, ".csv")
+renameFile(deviceName, file_path, ".json")
+renameFile(deviceName, CSV_file_path, ".csv")

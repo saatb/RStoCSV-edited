@@ -36,7 +36,3 @@ def renameFile(file, deviceName, fileType):
     os.rename(oldName, newName)
 
     print("Renamed " + oldName[index1: ] + " to " + newName[index1: ])
-
-file = open(askopenfilename( filetypes = [("CSV files", '*.csv')]))
-deviceName = getDeviceName(file)
-renameFile(file, deviceName, ".csv")
