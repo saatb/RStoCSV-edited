@@ -1,13 +1,13 @@
-#What I Changed
+# What I Changed
 
 Added a new custom - renameFile
 Contains two methods:
 
-#getDeviceName
+# getDeviceName
 takes one parameter - file
 finds and returns the device name (i.e. "b1", "r3", etc)
 
-#renameFile
+# renameFile
 takes three parameters - file, device name, file type
 renames file to device name
 
