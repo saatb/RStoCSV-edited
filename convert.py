@@ -1,10 +1,9 @@
 import argparse
 import json
+import csv
 import os
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
-from renameFile import renameFile
-from renameFile import getDeviceName
 
 import numpy as np
 import pandas as pd
@@ -129,8 +128,12 @@ print("Successfully created {}.csv in {}".format(os.path.basename(file_path).spl
 
 index1 = file_path.index(".json")
 CSV_file_path = file_path[0:index1] + ".csv"
+print(file_path)
+print(CSV_file_path)
 
-deviceName = getDeviceName(CSV_file_path)
+import renameFile
 
-renameFile(deviceName, file_path, ".json")
-renameFile(deviceName, CSV_file_path, ".csv")
+deviceName = "b1" #renameFile.getDeviceName(CSV_file_path)
+
+renameFile.renameFile(file_path, ".json", deviceName)
+renameFile.renameFile(CSV_file_path, ".csv", deviceName)

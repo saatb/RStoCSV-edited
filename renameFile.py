@@ -1,4 +1,4 @@
-from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import askopenfile
 import csv
 import os
 
@@ -9,8 +9,8 @@ def getDeviceName(file):
     #generates header
     header = []
     header = next(csvreader)
-    #print(header)
-    headerIndex = header.index("Device")
+    print(header)
+    headerIndex = header.index('Device')
 
 
     rows = []
@@ -23,16 +23,18 @@ def getDeviceName(file):
 
     return deviceName
 
-def renameFile(file, deviceName, fileType):
+def renameFile(file, fileType, deviceName):
     
     #rename file
 
-    oldName = os.path.abspath(file.name)
-    fileName = os.path.basename(file.name)
+    oldName = os.path.abspath(file)
+    fileName = os.path.basename(file)
     index1 = oldName.index(fileName)
     newName = oldName[0:index1] + deviceName + fileType
 
-    file.close()
     os.rename(oldName, newName)
 
     print("Renamed " + oldName[index1: ] + " to " + newName[index1: ])
+
+#file = askopenfile(filetypes=[("CSV files", "*.csv")])
+#getDeviceName(file)
