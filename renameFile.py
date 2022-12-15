@@ -1,4 +1,3 @@
-from tkinter.filedialog import askopenfile
 import csv
 import os
 
@@ -35,6 +34,3 @@ def renameFile(file, fileType, deviceName):
     os.rename(oldName, newName)
 
     print("Renamed " + oldName[index1: ] + " to " + newName[index1: ])
-
-#file = askopenfile(filetypes=[("CSV files", "*.csv")])
-#getDeviceName(file)
