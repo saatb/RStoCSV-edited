@@ -1,10 +1,9 @@
 import argparse
 import json
 import os
+import renameFile
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
-from renameFile import renameFile
-from renameFile import getDeviceName
 
 import numpy as np
 import pandas as pd
@@ -56,7 +55,7 @@ if args.save_filtered:
     with open(newpath, 'w') as fp:
         json.dump(json_data, fp)
     print("Successfully created {}.json in {}".format(os.path.basename(file_path).split('.')[0],
-                                                      os.path.dirname(file_path)))
+                                                    os.path.dirname(file_path)))
     exit()
 
 # The total number of scouted metrics
@@ -96,7 +95,7 @@ for team in json_data['teams'].values():
         data[row, 3] = scout['timestamp'] if args.timestamp else None
         # Adds all the metric values to a list. If the metric value is a string, remove duplicated spaces and tabs
         metric_values = [" ".join(i['value'].split()) if type(i['value']) is str else i['value'] for i in
-                         scout['metrics'].values()]
+                        scout['metrics'].values()]
         # Check to make sure that the metric values exist before adding to the data matrix
         data[row, column:] = metric_values if (len(metric_values) + column) == len(headers) else None
         row += 1
@@ -127,10 +126,11 @@ table.to_csv(newpath, index=False)
 print("Successfully created {}.csv in {}".format(os.path.basename(file_path).split('.')[0], os.path.dirname(file_path)))
 
 
-index1 = file_path.index(".json")
-CSV_file_path = file_path[0:index1] + ".csv"
+#MY CODE STARTS HERE
+index1 = file_path.index(".json") #find index of the file type so i can find the recently converted file
+CSV_file_path = file_path[0:index1] + ".csv" #finds the recently converted file
 
-deviceName = getDeviceName(CSV_file_path)
+deviceName = renameFile.getDeviceName(CSV_file_path) #get device name using my method
 
-renameFile(deviceName, file_path, ".json")
-renameFile(deviceName, CSV_file_path, ".csv")
+renameFile.renameFile(file_path, ".json", deviceName) #rename the json file using my method
+renameFile.renameFile(CSV_file_path, ".csv", deviceName) #rename the csv file using my method
