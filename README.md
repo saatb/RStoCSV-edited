@@ -1,4 +1,4 @@
-# New update - 12/18/22
+# New Update 3/4/23
 
 Now you can select the folder with all the json files in it, and the program will automatically convert + rename all of them!
 
@@ -45,7 +45,7 @@ Make sure you have:
 
 1. In your terminal of choice, navigate to where you want the folder to be installed. [Click here if that was gibberish](https://www.davidbaumgold.com/tutorials/command-line/).
 2. Enter the following command:
-`git clone https://github.com/will-hou/RStoCSV.git`
+`git clone https://github.com/saatb/RStoCSV-edited.git`
 3. Enter `pip install -r requirements.txt` to install the necessary dependencies
 4. You're good to go! RStoCSV is installed locally on your computer!
 
