@@ -44,7 +44,7 @@ def generate_team_json():
     # Captures team #s up to 8999
     for i in range(0, 18):
         teams = requests.get('https://www.thebluealliance.com/api/v3/teams/{}/simple'.format(i), params={
-            'X-TBA-Auth-Key': 'KuyisSfG5mADtkhd2h0ebKbiCtE40vqwN5fX6voJq8i4IYr9STai3PpqLHT1z3kR'}).json()
+            'X-TBA-Auth-Key': 'CKDlGjQsn9VQgLMOZZqXwJcfPrs9duHvCvbMrcqITCKeQn6jRpWRYq0uq34dVtU3'}).json()
         for team in teams:
             nickname_map[team['team_number']] = team['nickname']
 

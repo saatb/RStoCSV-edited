@@ -20,13 +20,13 @@ parser.add_argument('-e', '--save_filtered', help="Whether to just format the JS
 args = parser.parse_args()
 
 
-fileDirectory = askdirectory()
+fileDirectory = askdirectory() #get folder directory from user
 
-fileList = os.listdir(fileDirectory)
+fileList = os.listdir(fileDirectory) #get all the files in that folder and put them in list
 
-for file in fileList:
+for file in fileList: #run program for each file in folder
     Tk().withdraw()  # we don't want a full GUI, so keep the root window from appearing
-    file = fileDirectory + "/" + file
+    file = fileDirectory + "/" + file #turn file into correct format for program to use
     file_path = file
     print("Converting {} into a CSV file".format(file_path))
     print("Filtering: {}, With Timestamps: {}".format(args.filter, args.timestamp))
@@ -108,12 +108,12 @@ for file in fileList:
 
     # Put team numbers and their nicknames into data matrix
     team_nums = []
-    team_nicks = []
+    #team_nicks = []
     for team in json_data["teams"]:
         for i in range(len(json_data["teams"][team])):
             team_nums.append(team)
-            team_nicks.append(nicknames[team])
-    data[:, 1] = team_nicks
+    #        team_nicks.append(nicknames[team])
+    #data[:, 1] = team_nicks
     data[:, 0] = team_nums
 
     # Convert array into dataframe
@@ -134,9 +134,9 @@ for file in fileList:
 
     #MY CODE STARTS HERE
     index1 = file_path.index(".json") #find index of the file type so i can find the recently converted file
-    CSV_file_path = file_path[0:index1] + ".csv" #finds the recently converted file
+    csvFilePath = file_path[0:index1] + ".csv" #finds the recently converted file
 
-    deviceName = renameFile.getDeviceName(CSV_file_path) #get device name using my method
+    deviceName = renameFile.getDeviceName(csvFilePath) #get device name using my method
 
     renameFile.renameFile(file_path, ".json", deviceName) #rename the json file using my method
-    renameFile.renameFile(CSV_file_path, ".csv", deviceName) #rename the csv file using my method
+    renameFile.renameFile(csvFilePath, ".csv", deviceName) #rename the csv file using my method

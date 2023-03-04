@@ -1,4 +1,10 @@
-# What I Changed
+# New update - 12/18/22
+
+Now you can select the folder with all the json files in it, and the program will automatically convert + rename all of them!
+
+___________________________________
+
+# What I Changed - 12/16/22
 
 ____________________________________
 
