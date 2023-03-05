@@ -108,12 +108,12 @@ for file in fileList: #run program for each file in folder
 
     # Put team numbers and their nicknames into data matrix
     team_nums = []
-    #team_nicks = []
+    team_nicks = []
     for team in json_data["teams"]:
         for i in range(len(json_data["teams"][team])):
             team_nums.append(team)
-    #        team_nicks.append(nicknames[team])
-    #data[:, 1] = team_nicks
+            team_nicks.append(nicknames[team])
+    data[:, 1] = team_nicks
     data[:, 0] = team_nums
 
     # Convert array into dataframe
